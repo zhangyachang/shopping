@@ -1,0 +1,43 @@
+*{
+    margin:0;
+    padding:0;
+}
+a{
+    color:inherit;   /*继承父级的颜色*/
+    text-decoration:none;   /*文本下划线:none;*/
+}
+.clearfix::after{
+    content:"";
+    display:block;  /*变为块级元素*/
+    clear:both;    /*清除浮动*/
+}
+.nav{
+    background:#666;  /*背景颜色*/
+}
+ul li{
+    float:left;
+    margin:0 20px;  /*上下0   左右20*/
+    padding:0 10px;
+    height:70px;    /* 高度 */
+    line-height:70px;    /* 行高 */
+    color:#ccc;    /* 字体颜色 */
+    list-style: none;
+}
+ul li.on{
+    color:#fff;
+    background:#999;
+}
+ul li:hover{    /*鼠标移动上去效果*/
+    color:red;
+    background:#444;
+}
+.nav_list1{
+    margin-left:200px;  /* 左外边距 */
+}
+.nav_list4{
+    float:right;
+    margin-right:100px;
+}
+
+
+

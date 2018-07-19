@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/pay.css">
+
+    <script src="../js/jQuery.min.js"></script>
+    <script src="../js/underscore.js"></script>
+    <script src="../js/template.js"></script>
+
+
+</head>
+<body>
+<!--头部 start-->
+<div class="nav">
+    <ul class="clearfix">
+        <li class="nav_list1"><a href="../index.html">Let's Go</a></li>
+        <li><a href="">主页</a></li>
+        <li>
+            <a href="shopping_list.html">商品列表</a>
+        </li>
+        <li class="nav_list4 on">
+            <a href="cart_list.html">
+                <p>购物车(<span id="price">0</span>)</p>
+            </a>
+        </li>
+    </ul>
+</div>
+<!--头部 end-->
+
+
+
+
+<div class="content">
+    <div class="pay_title">购物清单</div>
+    <p class="pay_time">当前时间----</p>
+    <table>
+        <thead>
+        <tr>
+            <th>分类</th>
+            <th>名称</th>
+            <th>单价（元）</th>
+            <th>单位</th>
+            <th>数量</th>
+            <th>小计</th>
+        </tr>
+        </thead>
+        <tbody id="shopping_list_info">
+
+        </tbody>
+    </table>
+    <div class="pay_title">赠送商品</div>
+    <table id="pay_preferential">
+        <thead>
+            <tr>
+                <th>分类</th>
+                <th>名称</th>
+                <th>数量</th>
+            </tr>
+        </thead>
+        <tbody id="pay_song">
+
+        </tbody>
+    </table>
+    <div class="pay">
+        <p>总计：<span id="pay_all"></span>元</p>
+        <p>节省：<span id="pay_less"></span>元</p>
+        <button id="confirm_pay">确定</button>
+    </div>
+</div>
+
+<script src="../js/common.js"></script>
+
+
+
+<script id="template_list" type="text/html">
+    <%for(var i=0;i<list.length;i++){%>
+    <tr data-id="<%:=list[i]['barcode']%>">
+        <td><%:=list[i].type%></td>
+        <td><%:=list[i].name%></td>
+        <td><%:=list[i].price%></td>
+        <td><%:=list[i].unit%></td>
+        <td class="car_list_num_td"><%:=list[i].count%></td>
+        <td class="all_price"></td>
+    </tr>
+    <%}%>
+</script>
+
+<script src="../js/pay.js"></script>
+
+
+</body>
+</html>

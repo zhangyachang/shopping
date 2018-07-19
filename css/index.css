@@ -1,0 +1,15 @@
+.container{
+    width:1240px;
+    padding-top:100px;
+    margin:auto;
+}
+.container h2{
+    font-size:30px;
+}
+button.container_go{
+    display:inline-block;
+    padding:20px 10px;
+    border:none;
+    color:#fff;
+    background:#222;
+}

@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>购物车</title>
+    <link rel="stylesheet" href="../css/common.css">
+    <link rel="stylesheet" href="../css/cart_list.css">
+
+    <script src="../js/underscore.js"></script>
+    <script src="../js/template.js"></script>
+
+</head>
+<body>
+    <!--头部 start-->
+    <div class="nav">
+        <ul class="clearfix">
+            <li class="nav_list1"><a href="../index.html">Let's Go</a></li>
+            <li><a href="">主页</a></li>
+            <li>
+                <a href="shopping_list.html">商品列表</a>
+            </li>
+            <li class="nav_list4 on">
+                <a href="cart_list.html">
+                    <p>购物车(<span id="price">0</span>)</p>
+                </a>
+            </li>
+        </ul>
+    </div>
+    <!--头部 end-->
+    <div class="content">
+        <table>
+            <thead>
+                <tr>
+                    <th>分类</th>
+                    <th>名称</th>
+                    <th>单价（元）</th>
+                    <th>数量</th>
+                    <th>小计</th>
+                </tr>
+            </thead>
+            <tbody id="shopping_list_info">
+
+            </tbody>
+        </table>
+        <div class="pay">
+            <p>总计：<span id="pay_price">100</span>元</p>
+            <button>
+                <a href="pay.html">支付</a>
+            </button>
+        </div>
+    </div>
+
+    <script src="../js/common.js"></script>
+
+
+    <script id="template_list" type="text/html">
+        <%for(var i=0;i<list.length;i++){%>
+            <tr data-id="<%:=list[i]['barcode']%>">
+                <td><%:=list[i].type%></td>
+                <td><%:=list[i].name%></td>
+                <td><%:=list[i].price%></td>
+                <td class="car_list_num_td">
+                    <button class="num_less">-</button>
+                    <p class="num_p"><%:=list[i].count%></p>
+                    <button class="num_more">+</button>
+                </td>
+                <td class="all_price"></td>
+            </tr>
+        <%}%>
+    </script>
+
+    <script src="../js/cart_list.js"></script>
+
+
+</body>
+</html>
